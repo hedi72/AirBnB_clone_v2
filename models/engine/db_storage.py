@@ -15,7 +15,6 @@ from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 
-
 classes = {"State": State, "City": City, "User": User,
            "Place": Place, "Review": Review, "Amenity": Amenity}
 
