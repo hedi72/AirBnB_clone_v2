@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ module flask """
 from flask import Flask
-from flask import render_template, url_for, flash, redirect
+from flask import render_template
+
 app = Flask(__name__)
 
 
@@ -36,9 +37,6 @@ def number(n):
     return '{} is a number'.format(n)
 
 
-@app.route('/number_template/<int:n>')
-def number_template(n):
-    return render_template('5-number.html', number=n)
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even(n):
     """ def doc """
@@ -47,5 +45,7 @@ def number_odd_or_even(n):
     else:
         p = 'odd'
     return render_template('6-number_odd_or_even.html', number=n, parity=p)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
